@@ -1,7 +1,7 @@
 -- Criação do banco de dados
 
-CREATE DATABASE RestauranteSimples;
-USE RestauranteSimples;
+CREATE DATABASE Restaurante;
+USE Restaurante;
 
 -- Tabela de Produtos (Lanches)
 CREATE TABLE Produtos (

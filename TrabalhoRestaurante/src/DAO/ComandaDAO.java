@@ -10,10 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-/**
- *
- * @author Administrador
- */
+
 public class ComandaDAO {
     public void inserir(Comanda comanda) {
         // Implementação de inserção no banco

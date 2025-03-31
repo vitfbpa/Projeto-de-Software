@@ -9,13 +9,20 @@
             <file>file:/C:/Users/laboratorio/Desktop/Projeto-de-Software-main/TrabalhoRestaurante/src/beans/Pedido.java</file>
             <file>file:/C:/Users/laboratorio/Desktop/Projeto-de-Software-main/TrabalhoRestaurante/src/Restaurante/Conexao.java</file>
             <file>file:/C:/Users/laboratorio/Desktop/Projeto-de-Software-main/TrabalhoRestaurante/src/Restaurante/PainelForm.java</file>
+            <file>file:/C:/Users/laboratorio/Desktop/Projeto-de-Software-main/TrabalhoRestaurante/src/Restaurante/CaixaForm.java</file>
+            <file>file:/C:/Users/laboratorio/Desktop/Projeto-de-Software-main/TrabalhoRestaurante/src/Restaurante/PainelMesa.java</file>
             <file>file:/C:/Users/laboratorio/Desktop/Projeto-de-Software-main/TrabalhoRestaurante/src/beans/Funcionario.java</file>
             <file>file:/C:/Users/laboratorio/Desktop/Projeto-de-Software-main/TrabalhoRestaurante/src/DAO/ComandaDAO.java</file>
             <file>file:/C:/Users/laboratorio/Desktop/Projeto-de-Software-main/TrabalhoRestaurante/src/beans/Bebida.java</file>
+            <file>file:/C:/Users/laboratorio/Desktop/Projeto-de-Software-main/TrabalhoRestaurante/src/DAO/ComidaDAO.java</file>
+            <file>file:/C:/Users/laboratorio/Desktop/Projeto-de-Software-main/TrabalhoRestaurante/src/Restaurante/RelatorioForm.java</file>
+            <file>file:/C:/Users/laboratorio/Desktop/Projeto-de-Software-main/TrabalhoRestaurante/src/DAO/BebidaDAO.java</file>
+            <file>file:/C:/Users/laboratorio/Desktop/Projeto-de-Software-main/TrabalhoRestaurante/src/DAO/IngredienteDAO.java</file>
             <file>file:/C:/Users/laboratorio/Desktop/Projeto-de-Software-main/TrabalhoRestaurante/src/DAO/PedidoDAO.java</file>
             <file>file:/C:/Users/laboratorio/Desktop/Projeto-de-Software-main/TrabalhoRestaurante/src/beans/PedidoItem.java</file>
             <file>file:/C:/Users/laboratorio/Desktop/Projeto-de-Software-main/TrabalhoRestaurante/src/beans/Comida.java</file>
             <file>file:/C:/Users/laboratorio/Desktop/Projeto-de-Software-main/TrabalhoRestaurante/src/beans/Ingrediente.java</file>
+            <file>file:/C:/Users/laboratorio/Desktop/Projeto-de-Software-main/TrabalhoRestaurante/src/DAO/ItemDAO.java</file>
         </group>
     </open-files>
 </project-private>

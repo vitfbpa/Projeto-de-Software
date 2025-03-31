@@ -4,32 +4,46 @@
  */
 package beans;
 
+import java.util.List;
+
 /**
  *
  * @author guede
  */
 public class Pedido {
-    private int pedido;
-    private int numComanda;
-
-    public Pedido(int pedido, int numComanda) {
-        this.pedido = pedido;
-        this.numComanda = numComanda;
+    private int id;
+    private List<Item> itens;
+    private String status;
+    
+    public void adicionarItem(Item item){
+        itens.add(item);
+    }
+    
+    public void removerItem(Item item) {
+        itens.remove(item);
     }
 
-    public int getPedido() {
-        return pedido;
+    public int getId() {
+        return id;
     }
 
-    public void setPedido(int pedido) {
-        this.pedido = pedido;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public int getNumComanda() {
-        return numComanda;
+    public List<Item> getItens() {
+        return itens;
     }
 
-    public void setNumComanda(int numComanda) {
-        this.numComanda = numComanda;
+    public void setItens(List<Item> itens) {
+        this.itens = itens;
     }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }   
 }

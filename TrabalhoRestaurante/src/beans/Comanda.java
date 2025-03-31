@@ -4,36 +4,58 @@
  */
 package beans;
 
+import java.util.List;
+
 /**
  *
  * @author guede
  */
 public class Comanda {
-     private int cliente;
-     private int pedido;
-
-    public Comanda(){
-        
+    private int id;
+    private ClienteMesa cliente;
+    private List<Pedido> pedidos;
+    private String status;
+    
+    public void fecharComanda() {
+        this.status = "Fechada";
     }
     
-    public Comanda(int cliente, int pedido) {
-        this.cliente = cliente;
-        this.pedido = pedido;
+    public double calcularTotal() {
+        double total = 0;
+        for (Pedido pedido : pedidos) {
+        }
+        return total;
     }
 
-    public int getCliente() {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public ClienteMesa getCliente() {
         return cliente;
     }
 
-    public void setCliente(int cliente) {
+    public void setCliente(ClienteMesa cliente) {
         this.cliente = cliente;
     }
 
-    public int getPedido() {
-        return pedido;
+    public List<Pedido> getPedidos() {
+        return pedidos;
     }
 
-    public void setPedido(int pedido) {
-        this.pedido = pedido;
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

@@ -8,6 +8,6 @@ package beans;
  *
  * @author guede
  */
-public class Bebida extends Item{
+public class Funcionario {
     
 }

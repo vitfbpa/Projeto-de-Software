@@ -8,6 +8,13 @@ package beans;
  *
  * @author guede
  */
-public class Bebida extends Item{
+public class Item {
+    private int id;
+    private String nome;
+    private double preco;
+    private int estoque;
     
+    public double getPreco() {
+        return preco;
+    }
 }

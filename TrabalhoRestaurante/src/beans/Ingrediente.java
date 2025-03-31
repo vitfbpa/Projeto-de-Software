@@ -6,8 +6,8 @@ package beans;
 
 /**
  *
- * @author Administrador
+ * @author guede
  */
-public class Ingrediente {
+public class Ingrediente extends Item{
     
 }

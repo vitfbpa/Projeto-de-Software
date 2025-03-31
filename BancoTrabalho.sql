@@ -67,17 +67,10 @@ INSERT INTO ProdutoIngredientes (produto_id, ingrediente_id) VALUES
 (3, 1), -- X-Burger: Pão
 (3, 2), -- X-Burger: Hambúrguer de Carne
 (3, 3), -- X-Burger: Queijo
-(3, 4), -- X-Burger: Alface
-(3, 5), -- X-Burger: Tomate
-(3, 6), -- X-Burger: Molho Especial
 
 (4, 1), -- X-Tudo: Pão
 (4, 2), -- X-Tudo: Hambúrguer de Carne
 (4, 3), -- X-Tudo: Queijo
-(4, 4), -- X-Tudo: Alface
-(4, 5), -- X-Tudo: Tomate
-(4, 6), -- X-Tudo: Molho Especial
-(4, 7); -- X-Tudo: Bacon
 
 -- DAOs
 

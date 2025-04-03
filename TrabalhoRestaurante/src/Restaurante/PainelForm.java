@@ -26,7 +26,7 @@ public class PainelForm extends javax.swing.JFrame {
     
     public void adicionarPedidoAComanda(Comanda comanda, Pedido pedido) {
         comanda.getPedidos().add(pedido);
-        pedidoDAO.inserir(pedido);
+        pedidoDAO.inserirPedido(pedido);
         // Atualizar comanda no banco
     }
     /**

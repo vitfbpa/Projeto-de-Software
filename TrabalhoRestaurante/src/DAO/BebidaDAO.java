@@ -1,13 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package DAO;
 
-/**
- *
- * @author Administrador
- */
+import beans.Bebida;
+import java.util.ArrayList;
+import java.util.List;
+
 public class BebidaDAO {
+    private List<Bebida> bebidas = new ArrayList<>();
     
+    public void adicionar(Bebida bebida) {
+        bebidas.add(bebida);
+    }
+    
+    public List<Bebida> listar() {
+        return bebidas;
+    }
 }

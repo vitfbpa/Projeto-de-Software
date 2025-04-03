@@ -1,49 +1,26 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package beans;
 
-import java.util.List;
-
-/**
- *
- * @author guede
- */
 public class Pedido {
     private int id;
-    private List<Item> itens;
-    private String status;
+    private String cliente;
+    private double total;
     
-    public void adicionarItem(Item item){
-        itens.add(item);
-    }
-    
-    public void removerItem(Item item) {
-        itens.remove(item);
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
+    public Pedido(int id, String cliente, double total) {
         this.id = id;
+        this.cliente = cliente;
+        this.total = total;
     }
 
-    public List<Item> getItens() {
-        return itens;
+    public Pedido() {
+        
     }
-
-    public void setItens(List<Item> itens) {
-        this.itens = itens;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }   
+    
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+    
+    public String getCliente() { return cliente; }
+    public void setCliente(String cliente) { this.cliente = cliente; }
+    
+    public double getTotal() { return total; }
+    public void setTotal(double total) { this.total = total; }
 }

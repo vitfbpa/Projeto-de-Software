@@ -1,0 +1,9 @@
+======== RECIBO COMANDA #7 ========
+
+Produto            Qtd   Unit.    Total
+-----------------------------------------
+Pizza               10   35,00   350,00
+-----------------------------------------
+TOTAL GERAL: R$ 350,00
+
+Obrigado pela preferência!

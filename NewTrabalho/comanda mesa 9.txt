@@ -1,0 +1,10 @@
+======== RECIBO COMANDA #9 ========
+
+Produto            Qtd   Unit.    Total
+-----------------------------------------
+Refrigerante         5    6,50    32,50
+Pizza                1   35,00    35,00
+-----------------------------------------
+TOTAL GERAL: R$ 67,50
+
+Obrigado pela preferência!

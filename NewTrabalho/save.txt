@@ -1,0 +1,9 @@
+======== RECIBO COMANDA #11 ========
+
+Produto            Qtd   Unit.    Total
+-----------------------------------------
+Refrigerante         3    6,50    19,50
+-----------------------------------------
+TOTAL GERAL: R$ 19,50
+
+Obrigado pela preferência!

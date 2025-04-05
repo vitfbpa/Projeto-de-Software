@@ -1,0 +1,4 @@
+Produto;Quantidade;Preço Unitário;Total
+Pizza;10;R$ 35,00;R$ 350,00
+
+Total: R$ 350,00

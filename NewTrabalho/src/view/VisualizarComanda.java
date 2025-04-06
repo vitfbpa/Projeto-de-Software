@@ -25,6 +25,9 @@ public class VisualizarComanda extends javax.swing.JFrame {
     
     public VisualizarComanda() {
         initComponents();
+        setTitle("VISUALIZAR COMANDA");
+        setSize(749, 575);
+        setLocationRelativeTo(null);
     }
 
     /**

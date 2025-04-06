@@ -21,6 +21,10 @@ public class MenuRestaurante extends javax.swing.JFrame {
         initComponents();
         atualizarStatus();
         configurarBotoes();
+        
+        setTitle("TELA INICIAL");
+        setSize(528, 634);
+        setLocationRelativeTo(null);
     }
 
     
@@ -39,65 +43,49 @@ public class MenuRestaurante extends javax.swing.JFrame {
         btnGerarRecibo = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         lblStatus = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
+        btnNovaComanda.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         btnNovaComanda.setText("Nova Comanda");
+        getContentPane().add(btnNovaComanda);
+        btnNovaComanda.setBounds(120, 151, 300, 70);
 
+        btnAdicionarItem.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         btnAdicionarItem.setText("Adicionar Item");
         btnAdicionarItem.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAdicionarItemActionPerformed(evt);
             }
         });
+        getContentPane().add(btnAdicionarItem);
+        btnAdicionarItem.setBounds(120, 240, 300, 70);
 
+        btnVisualizarComanda.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         btnVisualizarComanda.setText("Visualizar Comanda");
+        getContentPane().add(btnVisualizarComanda);
+        btnVisualizarComanda.setBounds(120, 330, 300, 70);
 
+        btnGerarRecibo.setFont(new java.awt.Font("Segoe UI Black", 0, 12)); // NOI18N
         btnGerarRecibo.setText("Gerar Recibo");
+        getContentPane().add(btnGerarRecibo);
+        btnGerarRecibo.setBounds(120, 420, 300, 70);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("SISTEMA RESTAURANTE");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(120, 60, 320, 33);
+        getContentPane().add(lblStatus);
+        lblStatus.setBounds(185, 589, 277, 0);
 
-        lblStatus.setText(".");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap(134, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnAdicionarItem, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnNovaComanda, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnVisualizarComanda)
-                            .addComponent(btnGerarRecibo, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(200, 200, 200))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(123, 123, 123))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(lblStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(72, 72, 72))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(jLabel1)
-                .addGap(78, 78, 78)
-                .addComponent(btnNovaComanda, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(btnAdicionarItem, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
-                .addComponent(btnVisualizarComanda, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(47, 47, 47)
-                .addComponent(btnGerarRecibo, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 79, Short.MAX_VALUE)
-                .addComponent(lblStatus)
-                .addGap(45, 45, 45))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mobilias-modernas-restaurante.jpg"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(-10, -120, 530, 870);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -217,6 +205,7 @@ public class MenuRestaurante extends javax.swing.JFrame {
     private javax.swing.JButton btnNovaComanda;
     private javax.swing.JButton btnVisualizarComanda;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel lblStatus;
     // End of variables declaration//GEN-END:variables
 }

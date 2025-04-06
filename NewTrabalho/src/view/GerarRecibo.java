@@ -21,6 +21,10 @@ public class GerarRecibo extends javax.swing.JFrame {
         this.comandaId = comandaId;
         initComponents();
         carregarItens();
+        
+        setTitle("GERAR RECIBO");
+        setSize(677, 536);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -96,12 +100,12 @@ public class GerarRecibo extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblTotal)
                             .addComponent(btnSalvar))))
-                .addContainerGap(118, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(12, Short.MAX_VALUE)
+                .addContainerGap(15, Short.MAX_VALUE)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)

@@ -22,6 +22,9 @@ public class AdicionarItem extends javax.swing.JFrame {
     private AdicionarItem() {
         initComponents();
         carregarProdutos();
+        setTitle("ADICIONAR ITEM");
+        setSize(777, 494);
+        setLocationRelativeTo(null);
     }
 
     private void carregarProdutos() {

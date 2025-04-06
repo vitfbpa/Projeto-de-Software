@@ -16,6 +16,9 @@ public class SelecionarComanda extends javax.swing.JFrame {
     public SelecionarComanda() {
         initComponents();
         carregarComandas();
+        setTitle("SELECIONAR COMANDA");
+        setSize(621, 431);
+        setLocationRelativeTo(null);
     }
     
     public Comanda getComandaSelecionada() {

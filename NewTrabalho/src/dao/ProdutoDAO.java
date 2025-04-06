@@ -17,7 +17,7 @@ public class ProdutoDAO {
     // LISTAR TODOS OS PRODUTOS
     public List<Produto> listarTodos() {
         List<Produto> produtos = new ArrayList<>();
-        String sql = "SELECT id, nome, preco, tipo FROM Produtos ORDER BY tipo, nome";
+        String sql = "SELECT id, nome, preco, tipo, estoque FROM Produtos ORDER BY tipo, nome";
 
         try (Statement stmt = connection.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
@@ -27,7 +27,8 @@ public class ProdutoDAO {
                     rs.getInt("id"),
                     rs.getString("nome"),
                     rs.getDouble("preco"),
-                    rs.getString("tipo")
+                    rs.getString("tipo"),
+                    rs.getInt("estoque") // Adicionado
                 );
                 produtos.add(p);
             }
@@ -43,7 +44,7 @@ public class ProdutoDAO {
     public Produto getProdutoById(int id) {
         try {
             PreparedStatement stmt = connection.prepareStatement(
-                "SELECT id, nome, preco, tipo FROM Produtos WHERE id = ?");
+                "SELECT id, nome, preco, tipo, estoque FROM Produtos WHERE id = ?");
             stmt.setInt(1, id);
             ResultSet rs = stmt.executeQuery();
 
@@ -52,7 +53,8 @@ public class ProdutoDAO {
                     rs.getInt("id"),
                     rs.getString("nome"),
                     rs.getDouble("preco"),
-                    rs.getString("tipo")
+                    rs.getString("tipo"),
+                    rs.getInt("estoque") // Adicionado
                 );
             }
         } catch (SQLException e) {
@@ -80,12 +82,13 @@ public class ProdutoDAO {
 
     // ADICIONAR PRODUTO
     public boolean adicionarProduto(Produto produto) {
-        String sql = "INSERT INTO Produtos (nome, preco, tipo) VALUES (?, ?, ?)";
+        String sql = "INSERT INTO Produtos (nome, preco, tipo, estoque) VALUES (?, ?, ?, ?)";
 
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, produto.getNome());
             stmt.setDouble(2, produto.getPreco());
             stmt.setString(3, produto.getTipo());
+            stmt.setInt(4, produto.getEstoque());
 
             return stmt.executeUpdate() > 0;
 
@@ -97,13 +100,14 @@ public class ProdutoDAO {
 
     // ATUALIZAR PRODUTO
     public boolean atualizarProduto(Produto produto) {
-        String sql = "UPDATE Produtos SET nome = ?, preco = ?, tipo = ? WHERE id = ?";
+        String sql = "UPDATE Produtos SET nome = ?, preco = ?, tipo = ?, estoque = ? WHERE id = ?";
 
         try (PreparedStatement stmt = connection.prepareStatement(sql)) {
             stmt.setString(1, produto.getNome());
             stmt.setDouble(2, produto.getPreco());
             stmt.setString(3, produto.getTipo());
-            stmt.setInt(4, produto.getId());
+            stmt.setInt(4, produto.getEstoque()); // Atualiza estoque
+            stmt.setInt(5, produto.getId());
 
             return stmt.executeUpdate() > 0;
 
@@ -127,5 +131,21 @@ public class ProdutoDAO {
         }
     }
 
-    
+    // ATUALIZAR ESTOQUE AO REALIZAR PEDIDO
+    public boolean atualizarEstoque(int produtoId, int quantidade) {
+        String sql = "UPDATE Produtos SET estoque = estoque - ? WHERE id = ? AND estoque >= ?";
+
+        try (PreparedStatement stmt = connection.prepareStatement(sql)) {
+            stmt.setInt(1, quantidade);
+            stmt.setInt(2, produtoId);
+            stmt.setInt(3, quantidade);
+
+            int afetados = stmt.executeUpdate();
+            return afetados > 0;
+
+        } catch (SQLException e) {
+            System.out.println("Erro ao atualizar estoque: " + e.getMessage());
+            return false;
+        }
+    }
 }

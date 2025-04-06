@@ -4,7 +4,6 @@ import dao.ProdutoDAO;
 import model.ItemComanda;
 import model.Produto;
 import model.Conexao;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -23,6 +22,21 @@ public class ItemComandaDAO {
         try {
             conn = new Conexao().getConexao();
 
+            // Verificar se há estoque suficiente
+            Produto produto = produtoDAO.getProdutoById(produtoId);
+            if (produto == null || produto.getEstoque() < quantidade) {
+                System.out.println("Estoque insuficiente para o produto: " + (produto != null ? produto.getNome() : "ID " + produtoId));
+                return false;
+            }
+
+            // Descontar do estoque
+            boolean estoqueAtualizado = produtoDAO.atualizarEstoque(produtoId, quantidade);
+            if (!estoqueAtualizado) {
+                System.out.println("Erro ao atualizar o estoque do produto ID: " + produtoId);
+                return false;
+            }
+
+            // Inserir item na comanda
             stmt = conn.prepareStatement("INSERT INTO ItensComanda (comanda_id, produto_id, quantidade, preco_unitario) VALUES (?, ?, ?, ?)");
             stmt.setInt(1, comandaId);
             stmt.setInt(2, produtoId);
@@ -30,6 +44,7 @@ public class ItemComandaDAO {
             stmt.setDouble(4, precoUnitario);
             stmt.executeUpdate();
 
+            // Atualizar total da comanda
             atualizarTotalComanda(conn, comandaId, precoUnitario * quantidade);
 
             return true;
@@ -98,6 +113,7 @@ public class ItemComandaDAO {
         }
     }
 
+    // Método vazio pode ser removido se não for usado
     public void adicionarItem(int comandaId, int id, int quantidade) {
     }
 }

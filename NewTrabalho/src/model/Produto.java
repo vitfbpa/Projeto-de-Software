@@ -5,15 +5,17 @@ public class Produto {
     private String nome;
     private double preco;
     private String tipo;
+    private int estoque;
 
     public Produto() {
     }
 
-    public Produto(int id, String nome, double preco, String tipo) {
+    public Produto(int id, String nome, double preco, String tipo, int estoque) {
         this.id = id;
         this.nome = nome;
         this.preco = preco;
         this.tipo = tipo;
+        this.estoque = estoque;
     }
 
     public int getId() {
@@ -48,8 +50,16 @@ public class Produto {
         this.tipo = tipo;
     }
 
-    @Override
-    public String toString() {
-        return nome;
+    public int getEstoque() {
+    return estoque;
+}
+
+public void setEstoque(int estoque) {
+    this.estoque = estoque;
     }
+
+    @Override
+public String toString() {
+    return nome + " (" + estoque + " em estoque)";
+}
 }

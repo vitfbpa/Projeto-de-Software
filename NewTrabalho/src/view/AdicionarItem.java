@@ -41,6 +41,8 @@ public class AdicionarItem extends javax.swing.JFrame {
         this.comandaId = comandaId;
         initComponents();
         carregarProdutos();
+        setSize(777, 494);
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -99,17 +101,17 @@ public class AdicionarItem extends javax.swing.JFrame {
                         .addGap(146, 146, 146)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(18, 18, 18)
-                                .addComponent(comboProdutos, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(bntCancelar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnAdicionar))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(18, 18, 18)
-                                .addComponent(spinnerQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(spinnerQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 360, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(comboProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(231, 231, 231)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 313, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -118,21 +120,21 @@ public class AdicionarItem extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(52, 52, 52)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(comboProdutos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(52, 52, 52)
+                .addGap(75, 75, 75)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(spinnerQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(89, 89, 89)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnAdicionar)
-                    .addComponent(bntCancelar))
-                .addGap(157, 157, 157))
+                    .addComponent(bntCancelar)
+                    .addComponent(btnAdicionar))
+                .addGap(78, 78, 78))
         );
 
         pack();
@@ -144,6 +146,7 @@ public class AdicionarItem extends javax.swing.JFrame {
 
     private void bntCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bntCancelarActionPerformed
         dispose();
+        carregarProdutos();
     }//GEN-LAST:event_bntCancelarActionPerformed
 
     private void comboProdutosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProdutosActionPerformed
@@ -151,16 +154,22 @@ public class AdicionarItem extends javax.swing.JFrame {
     }//GEN-LAST:event_comboProdutosActionPerformed
 
     private void btnAdicionarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAdicionarActionPerformed
-        model.Produto produto = (model.Produto) comboProdutos.getSelectedItem();
+        Produto produto = (Produto) comboProdutos.getSelectedItem();
     int quantidade = (int) spinnerQuantidade.getValue();
 
     if (produto != null && quantidade > 0) {
         model.dao.ItemComandaDAO itemDAO = new model.dao.ItemComandaDAO();
-        itemDAO.adicionarItem(comandaId, produto.getId(), quantidade, produto.getPreco());
-        dispose();
+        boolean sucesso = itemDAO.adicionarItem(comandaId, produto.getId(), quantidade, produto.getPreco());
+
+        if (sucesso) {
+            JOptionPane.showMessageDialog(this, "Item adicionado com sucesso!");
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(this, "Não foi possível adicionar o item. Estoque insuficiente.");
+        }
     } else {
         JOptionPane.showMessageDialog(this, "Selecione um produto e uma quantidade válida.");
-    }
+      }
     }//GEN-LAST:event_btnAdicionarActionPerformed
 
     /**

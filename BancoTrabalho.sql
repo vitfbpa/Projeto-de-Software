@@ -7,10 +7,11 @@ CREATE TABLE Produtos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(50) NOT NULL,
     preco DECIMAL(10,2) NOT NULL,
-    tipo ENUM('Comida', 'Bebida') NOT NULL
+    tipo ENUM('Comida', 'Bebida') NOT NULL,
+    estoque INT NOT NULL DEFAULT 0  -- Novo campo de controle de estoque
 );
 
--- Tabela de Comandas (agora sem data/hora e status)
+-- Tabela de Comandas
 CREATE TABLE Comandas (
     id INT AUTO_INCREMENT PRIMARY KEY,
     total DECIMAL(10,2) DEFAULT 0.00
@@ -27,14 +28,14 @@ CREATE TABLE ItensComanda (
     FOREIGN KEY (produto_id) REFERENCES Produtos(id)
 );
 
--- Inserção de dados básicos de produtos e bebidas (3 de cada)
-INSERT INTO Produtos (nome, preco, tipo) VALUES
+-- Inserção de dados iniciais com estoque
+INSERT INTO Produtos (nome, preco, tipo, estoque) VALUES
 -- Comidas
-('Hambúrguer', 15.90, 'Comida'),
-('Pizza', 35.00, 'Comida'),
-('Salada', 12.50, 'Comida'),
+('Hambúrguer', 15.90, 'Comida', 50),
+('Pizza', 35.00, 'Comida', 30),
+('Salada', 12.50, 'Comida', 20),
 
 -- Bebidas
-('Refrigerante', 6.50, 'Bebida'),
-('Suco Natural', 8.00, 'Bebida'),
-('Água Mineral', 3.50, 'Bebida');
+('Refrigerante', 6.50, 'Bebida', 60),
+('Suco Natural', 8.00, 'Bebida', 40),
+('Água Mineral', 3.50, 'Bebida', 100);

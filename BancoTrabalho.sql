@@ -8,7 +8,7 @@ CREATE TABLE Produtos (
     nome VARCHAR(50) NOT NULL,
     preco DECIMAL(10,2) NOT NULL,
     tipo ENUM('Comida', 'Bebida') NOT NULL,
-    estoque INT NOT NULL DEFAULT 0  -- Novo campo de controle de estoque
+    estoque INT NOT NULL DEFAULT 0
 );
 
 -- Tabela de Comandas

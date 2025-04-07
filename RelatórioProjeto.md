@@ -1,79 +1,167 @@
-# Projeto-de-Software Projeto Restaurante
+# 🍽️ Projeto-de-Software: Projeto Restaurante
 
-Relatório do Projeto Restaurante - Sistema de Gerenciamento para Restaurante 
+## 📋 Relatório do Projeto Restaurante - Sistema de Gerenciamento para Restaurante
 
-1. Introdução 
+---
 
-O objetivo principal é automatizar processos como pedidos, controle de estoque, atendimento ao cliente, melhorando a eficiência operacional do estabelecimento. 
+## 1. 🧠 Introdução
 
- 
+O objetivo principal é automatizar processos como **pedidos**, **controle de estoque** e **atendimento ao cliente**, melhorando a eficiência operacional do estabelecimento.
 
-2. Funcionalidades Principais 
+---
 
-2.1 Ideia de funcionalidade 
+### 1.1 📊 Diagramas
 
-O cliente ao chegar no restaurante realiza deu pedido direto no sistema, onde ficaria em um tablet ou dispositivo, localizado em uma mesa. Então seria criada uma comanda onde poderá ser adicionado itens, (os produtos do restaurante) nessa comanda. Gerando um recibo em arquivo (txt)  da comanda com ID e todos pedidos, valor. 
+#### 🎭 Caso de Uso - Descrição
+![image](https://github.com/user-attachments/assets/bbfc0915-0879-4045-aedf-87d63f9f1ecc)
 
-Também há um controle de estoque dos produtos previamente adicionados no banco de dados do restaurante, mostrando a quantia, se ainda estão disponíveis no restaurante para o cliente pedir. Contém a funcionalidade de selecionar uma comanda já gerada e adicionar mais produtos caso desejado. 
+##### 📝 Modelo Descritivo do Caso de Uso
+1. Sumário
+caso de interação entre os atores Cliente e Funcionário no processo de pedidos e gerenciamento de comandas de uma lanchonete.
 
- 
+2. Atores
+Cliente: Usuário que realiza pedidos no sistema.
 
-2.2. Cadastro e Gerenciamento de Produtos 
+Funcionário: Responsável pelo gerenciamento do estoque e pela verificação das comandas.
 
-Cardápio Digital: 
+3. Pré-condição
+cliente deve fazer o pedido pelo tablet vinculado a uma mesa, gerando uma comanda quando feito.
 
-Cadastro de pratos, bebidas. 
+restaurante deve ter um cardápio disponível.
 
-Opção de adição de produto em uma comanda já criada. 
+4. Fluxo Principal
+ o cliente consulta o cardápio.
 
-Atualização de preços e disponibilidade. 
+O cliente faz um pedido.
 
-Controle de Estoque: 
+O sistema gera uma comanda.
 
-Registro dos produtos do restaurante. 
+O Funcionário verifica a comanda.
 
-Adicionar produtos ao estoque. 
+O Funcionário confirma a entrega do pedido.
 
-Fluxo de Atendimento: 
+5. Fluxo Secundário
+O cliente pode adicionar mais produtos a comanda.
 
-Pedidos enviados diretamente para a cozinha. 
+o funcionário pode ajustar a comanda antes da confirmação da entrega e após caso confirmação, relatando erro.
 
-Opção de visulizar as comanda com os pedidos, 
+6. Fluxo de Exceção
+se um item do pedido não estiver disponível no estoque, o funcionário informa ao cliente e solicita uma alteração no pedido.
 
-Status do pedido. 
+se houver erro na comanda, o funcionário pode modificá-la se não estiver fechada.
 
-Geração de recibo de comanda. 
+7. Pós condição
+O pedido é finalizado e entregue ao cliente.
 
- 3. Banco de Dados SQL (Estrutura Principal) 
+comanda só pode ser fechada se todos pedidos com entrega confirmada nela estiverem pagos.
 
-Tabela no banco de dados restaurante  
+a comanda é fechada.
 
- | comandas |  comanda é gerada com um ID, onde contém itens da comandas  
+8. Regras de Negócio
+todo pedido deve estar vinculado a uma comanda.
 
- | itenscomanda | intenscomanda contém os produtos que foram pedidos pelo cliente 
+a confirmação da entrega deve ser feita em todos pedidos feitos e adicionados antes de dar ok para fechar a comanda.
 
- | produtos | contém os produtos disponíveis no restaurante 
+O estoque deve ser atualizado após a entrega do pedido.
 
- 
+##### 📝 Diagrama de classes
+![image](https://github.com/user-attachments/assets/e5e39f95-150e-495e-8f12-9be51cb20901)
 
-4. (Estrutura com Diagramas) DIAGRAMA DE SEQUÊNCIA 
 
- 
+#####  Diagrama de sequência
+![image](https://github.com/user-attachments/assets/4c218fea-d8af-4787-9623-1730843c2d31)
 
-3.1 DIAGRAMA DE CLASSES 
+![image](https://github.com/user-attachments/assets/d2a14ce9-4b74-410a-9acc-c073f3c305ba)
 
- 
 
-3.2 DIAGRAMA DE CASO DE USO 
+**1. 📌 Sumário**  
+Caso de interação entre os atores *Cliente* e *Funcionário* no processo de pedidos e gerenciamento de comandas de uma lanchonete.
 
- 
+**2. 👥 Atores**  
+- **👤 Cliente**: Usuário que realiza pedidos no sistema.  
+- **👨‍🍳 Funcionário**: Responsável pelo gerenciamento do estoque e pela verificação das comandas.
 
-  
+**3. ⚙️ Pré-condição**  
+- O cliente deve fazer o pedido pelo tablet vinculado à mesa.  
+- O restaurante deve ter um cardápio disponível no sistema.
 
- 
+**4. 🔁 Fluxo Principal**  
+1. O cliente consulta o cardápio. 📱  
+2. O cliente faz um pedido. 🍔  
+3. O sistema gera uma comanda. 🧾  
+4. O funcionário verifica a comanda. 👀  
+5. O funcionário confirma a entrega do pedido. ✅
 
- 
+**🔄 Fluxo Secundário**  
+- O cliente pode adicionar mais produtos à comanda. ➕  
+- O funcionário pode ajustar a comanda antes ou depois da entrega.
 
- 
+**⚠️ Fluxo de Exceção**  
+- Se um item não estiver disponível no estoque, o funcionário informa o cliente.  
+- Caso haja erro na comanda, o funcionário pode corrigi-la (se não estiver fechada).
 
- 
+**📦 Pós-condição**  
+- O pedido é entregue.  
+- A comanda é fechada apenas se todos os pedidos forem entregues e pagos. 💰
+
+**📐 Regras de Negócio**  
+- Todo pedido deve estar vinculado a uma comanda.  
+- A entrega de todos os pedidos deve ser confirmada antes do fechamento.  
+- O estoque é atualizado após cada entrega. 📉
+
+---
+
+## 2. ⚙️ Funcionalidades Principais
+
+### 2.1 💡 Ideia de Funcionalidade
+
+O cliente realiza seu pedido diretamente no sistema por meio de um tablet localizado na mesa.  
+- Criação automática de uma **comanda** com os itens pedidos. 🧾  
+- Geração de **recibo em `.txt`** com ID, produtos e valor total. 🧾  
+- Controle de **estoque** com quantidade e disponibilidade dos produtos. 📦  
+- Adição de itens em comandas já existentes. 🔄
+
+### 2.2 📦 Cadastro e Gerenciamento de Produtos
+
+#### 🍽️ Cardápio Digital
+- Cadastro de pratos e bebidas.  
+- Adição de produtos a comandas existentes.  
+- Atualização de preços e disponibilidade.
+
+#### 🏷️ Controle de Estoque
+- Registro de produtos no banco de dados.  
+- Adição de novos itens ao estoque.
+
+#### 🚀 Fluxo de Atendimento
+- Pedidos enviados à **cozinha** automaticamente. 🍳  
+- Visualização das **comandas** com pedidos abertos. 🧾  
+- Atualização do **status do pedido**. 🔄  
+- Geração de **recibo** após pagamento. 💸
+
+---
+
+## 3. 🛢️ Banco de Dados SQL (Estrutura Principal)
+
+### 🧱 Tabelas do banco `restaurante`:
+
+| 🗂️ Tabela        | 📄 Descrição                                                                 |
+|------------------|------------------------------------------------------------------------------|
+| `comandas`       | Armazena as comandas criadas com seus respectivos IDs.                      |
+| `itenscomanda`   | Contém os produtos adicionados nas comandas pelos clientes.                 |
+| `produtos`       | Contém os produtos disponíveis no restaurante (comidas e bebidas).           |
+
+---
+
+## 4. 📁 Estrutura de Arquivos
+📁 src/ 
+├── 📁 dao/ │ ├── 📄 ComandaDAO.java - Gerenciamento das comandas │ └── 📄 ProdutoDAO.java - Gerenciamento dos produtos │ 
+
+├── 📁 model/ │ ├── 📄 Comanda.java - Modelo de dados da comanda │ ├── 📄 Produto.java - Modelo de dados do produto │ 
+├── 📄 ItemComanda.java - Modelo de item da comanda │ └── 📄 Conexao.java - Gerência da conexão com o banco de dados │ 
+
+├── 📁 model/dao/ │ └── 📄 ItemComandaDAO.java - Lógica dos itens da comanda e controle de estoque │ 
+
+├── 📁 view/ │ ├── 📄 Main.java - Ponto de entrada do sistema │ ├── 📄 MenuRestaurante.java - Tela principal do sistema │ 
+├── 📄 NovaComandaDialog.java - Janela para criação de comandas │ ├── 📄 AdicionarItem.java - Tela para adicionar produtos à comanda │
+├── 📄 VisualizarComanda.java - Exibe os itens da comanda │ 
+├── 📄 SelecionarComanda.java - Tela para seleção de comandas existentes │ └── 📄 GerarRecibo.java - Geração de recibos em formato .txt

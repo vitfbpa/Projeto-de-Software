@@ -179,7 +179,8 @@ O cliente realiza seu pedido diretamente no sistema por meio de um tablet locali
 **Vicenzo de Souza**  
 Curso de Ciência da Computação – Universidade Franciscana (UFN)  
 
-E-mail: vicenzo.milanesi@ufn.edu.br  
+E-mail: vicenzo.milanesi@ufn.edu.br 
+
 GitHub: [@vitfbpa](https://github.com/vitfbpa)
 
 ---
@@ -188,6 +189,7 @@ GitHub: [@vitfbpa](https://github.com/vitfbpa)
 Curso de Ciência da Computação – Universidade Franciscana (UFN)  
 
 E-mail: anthony.guedes@ufn.edu.br
+
 GitHub: [@AnthyGuedes](https://github.com/AnthyGuedes)
 
 ---

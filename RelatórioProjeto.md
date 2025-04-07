@@ -90,7 +90,7 @@ Caso de interação entre os atores *Cliente* e *Funcionário* no processo de pe
 2. O cliente faz um pedido. 🍔  
 3. O sistema gera uma comanda. 🧾  
 4. O funcionário verifica a comanda. 👀  
-5. O funcionário confirma a entrega do pedido, gerando um recibo do pedido. ✅
+5. O funcionário confirma a entrega do pedido, gerando um recibo do mesmo. ✅
 
 **🔄 Fluxo Secundário**  
 - O cliente pode adicionar mais produtos à comanda. ➕  

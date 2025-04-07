@@ -153,15 +153,22 @@ O cliente realiza seu pedido diretamente no sistema por meio de um tablet locali
 ---
 
 ## 4. 📁 Estrutura de Arquivos
-📁 src/ 
-├── 📁 dao/ │ ├── 📄 ComandaDAO.java - Gerenciamento das comandas │ └── 📄 ProdutoDAO.java - Gerenciamento dos produtos │ 
-
-├── 📁 model/ │ ├── 📄 Comanda.java - Modelo de dados da comanda │ ├── 📄 Produto.java - Modelo de dados do produto │ 
-├── 📄 ItemComanda.java - Modelo de item da comanda │ └── 📄 Conexao.java - Gerência da conexão com o banco de dados │ 
-
-├── 📁 model/dao/ │ └── 📄 ItemComandaDAO.java - Lógica dos itens da comanda e controle de estoque │ 
-
-├── 📁 view/ │ ├── 📄 Main.java - Ponto de entrada do sistema │ ├── 📄 MenuRestaurante.java - Tela principal do sistema │ 
-├── 📄 NovaComandaDialog.java - Janela para criação de comandas │ ├── 📄 AdicionarItem.java - Tela para adicionar produtos à comanda │
-├── 📄 VisualizarComanda.java - Exibe os itens da comanda │ 
-├── 📄 SelecionarComanda.java - Tela para seleção de comandas existentes │ └── 📄 GerarRecibo.java - Geração de recibos em formato .txt
+```
+├───build  
+│   └───classes  
+│       ├───dao  
+│       ├───images  
+│       ├───model  
+│       │   └───dao  
+│       └───view  
+├───drivers  
+├───nbproject  
+│   └───private  
+├───src  
+│   ├───dao  
+│   ├───images  
+│   ├───model  
+│   │   └───dao  
+│   └───view
+└───test
+```

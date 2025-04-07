@@ -31,11 +31,11 @@ CREATE TABLE ItensComanda (
 -- Inserção de dados iniciais com estoque
 INSERT INTO Produtos (nome, preco, tipo, estoque) VALUES
 -- Comidas
-('Hambúrguer', 15.90, 'Comida', 50),
-('Pizza', 35.00, 'Comida', 30),
-('Salada', 12.50, 'Comida', 20),
+('Burger Simples', 25.90, 'Comida', 50),
+('Burger Turbo Bacon', 35.90, 'Comida', 30),
+('Burger Vegano', 32.90, 'Comida', 20),
 
 -- Bebidas
-('Refrigerante', 6.50, 'Bebida', 60),
+('Coca Cola', 6.50, 'Bebida', 60),
 ('Suco Natural', 8.00, 'Bebida', 40),
 ('Água Mineral', 3.50, 'Bebida', 100);

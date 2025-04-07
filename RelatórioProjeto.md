@@ -172,3 +172,22 @@ O cliente realiza seu pedido diretamente no sistema por meio de um tablet locali
 │   └───view
 └───test
 ```
+---
+
+## 5. 👥 Autores
+
+**Vicenzo de Souza**  
+Curso de Ciência da Computação – Universidade Franciscana (UFN)  
+
+E-mail: vicenzo.milanesi@ufn.edu.br  
+GitHub: [@vitfbpa](https://github.com/vitfbpa)
+
+---
+
+**Anthony Guedes**  
+Curso de Ciência da Computação – Universidade Franciscana (UFN)  
+
+E-mail: anthony.guedes@ufn.edu.br
+GitHub: [@AnthyGuedes](https://github.com/AnthyGuedes)
+
+---

@@ -65,14 +65,22 @@ a confirmação da entrega deve ser feita em todos pedidos feitos e adicionados 
 O estoque deve ser atualizado após a entrega do pedido.
 
 ##### 📝 Diagrama de classes
-![image](https://github.com/user-attachments/assets/e5e39f95-150e-495e-8f12-9be51cb20901)
+![image](https://github.com/user-attachments/assets/4bb8c2d6-1c12-46b5-801f-fda96fe33769)
+
+
+![image](https://github.com/user-attachments/assets/06435083-da1e-41b9-8bc6-c4b9c9f03d00)
+
+
+![image](https://github.com/user-attachments/assets/1ffc657a-1b2e-4d6c-8ae4-2372485b0875)
 
 
 #####  Diagrama de sequência
-![image](https://github.com/user-attachments/assets/4c218fea-d8af-4787-9623-1730843c2d31)
 
-![image](https://github.com/user-attachments/assets/d2a14ce9-4b74-410a-9acc-c073f3c305ba)
+![image](https://github.com/user-attachments/assets/391d4436-6f2a-4d00-bc14-00f2a12691c8)
 
+![image](https://github.com/user-attachments/assets/1d919f1c-d117-48e8-a1b3-68e0df0175a1)
+
+![image](https://github.com/user-attachments/assets/7e6ad26c-10b7-4ddb-b243-cee2bdb85fbe)
 
 **1. 📌 Sumário**  
 Caso de interação entre os atores *Cliente* e *Funcionário* no processo de pedidos e gerenciamento de comandas de uma lanchonete.

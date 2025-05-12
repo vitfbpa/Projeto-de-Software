@@ -14,6 +14,7 @@
         <th>Valor</th>
         <th>Quantidade</th>
         <th>Imagem</th>
+        <th>Ações</th>
     </tr>
     <tr th:each="p : ${produtos}">
         <td th:text="${p.nome}"></td>
@@ -21,6 +22,10 @@
         <td th:text="${p.preco}"></td>
         <td th:text="${p.quantidade}"></td>
         <td><img th:src="${p.imagem}" width="100"></td>
+        <td>
+            <a th:href="@{/produto/editar/{id}(id=${p.id})}">Editar</a>
+            <a th:href="@{/produto/deletar/{id}(id=${p.id})}">Deletar</a>
+        </td>
     </tr>
 
 
